@@ -13,10 +13,14 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
     }
   }
-  product.init({
+  Product.init({
     name: DataTypes.STRING,
     price: DataTypes.FLOAT,
-    stock: DataTypes.INTEGER
+    stock: DataTypes.INTEGER,
+    imageUrl: {
+      type: DataTypes.TEXT,
+      defaultValue: "https://tse2.mm.bing.net/th?id=OIP.U2iQ7wNK6ZzTW_traW_-PQHaHa&pid=Api&P=0&h=180"
+    },
   }, {
     sequelize,
     modelName: 'Product',
